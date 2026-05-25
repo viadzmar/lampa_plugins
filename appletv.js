@@ -6318,7 +6318,10 @@
         .card__age,
         .card__text,
         .card__icons,
-        .card__rating { 
+        .card__rating,
+        .full-start__age,
+        .full-start-new__age,
+        .card-episode__age { 
             display: none !important; 
         }
 
@@ -6351,5 +6354,3 @@
     style.innerHTML = structural_patch;
     document.head.appendChild(style);
 })();
-
-
