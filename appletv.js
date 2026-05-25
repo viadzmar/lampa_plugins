@@ -6315,27 +6315,30 @@
 (function () {
     const structural_patch = `
         .nfx-card-overlay__meta,
+        .nfx-card-rating,
         .card__age,
         .card__text,
         .card__icons,
         .card__rating,
+        .card__vote,
         .full-start__age,
         .full-start-new__age,
-        .card-episode__age { 
+        .full-start__slogan,
+        .full-start-new__slogan,
+        .full-start__rate,
+        .full-start__rating { 
             display: none !important; 
         }
 
         .nfx-card-overlay,
         .card__view::after,
         .card__view::before {
-            background: none !important;
-            background-image: none !important;
-            box-shadow: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
         }
 
         .full-start__description,
         .full-start__details,
-        .full-start__rate,
         .full-start__tags,
         .full-start__reactions,
         .full-start__persons,
