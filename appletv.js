@@ -69,8 +69,8 @@
     TOPNAV_SIZE_ATTR: 'data-agnative-topnav-size'
   };
 
-  const PLUGIN_VERSION = '0.3.25';
-  const PLUGIN_AUTHORS = 'llowmikee, nrsua, gwynnbleiidd, arabianq, ang3el7z, dimir96';
+  const PLUGIN_VERSION = '0.4';
+  const PLUGIN_AUTHORS = 'viadzmar';
 
   const ru = {
     nav_feed: 'Лента',
@@ -6352,16 +6352,6 @@
         .info__rate,
         .tv-rating { 
             display: none !important; 
-        }
-
-        body[data-agnative-perf="ultra"] .agnative-leftdock,
-        body[data-agnative-perf="ultra"] .settings__content,
-        body[data-agnative-perf="ultra"] .agnative-control-panel,
-        .agnative-leftdock,
-        .settings__content,
-        .agnative-control-panel {
-            background: none !important;
-            background-color: #000000 !important;
         }
     `;
     const style = document.createElement('style');
