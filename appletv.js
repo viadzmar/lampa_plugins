@@ -6353,6 +6353,12 @@
         .tv-rating { 
             display: none !important; 
         }
+
+        [data-agnative-perf="ultra"] .agnative-leftdock,
+        [data-agnative-perf="ultra"] .settings__content,
+        [data-agnative-perf="ultra"] .agnative-control-panel {
+            background: #000000 !important;
+        }
     `;
     const style = document.createElement('style');
     style.type = 'text/css';
