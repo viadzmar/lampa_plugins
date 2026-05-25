@@ -6312,7 +6312,6 @@
   })();
 
 })();
-
 (function () {
     const structural_patch = `
         .nfx-card-overlay__meta,
@@ -6352,4 +6351,3 @@
     style.innerHTML = structural_patch;
     document.head.appendChild(style);
 })();
-        
