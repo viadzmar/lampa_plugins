@@ -6354,10 +6354,14 @@
             display: none !important; 
         }
 
-        [data-agnative-perf="ultra"] .agnative-leftdock,
-        [data-agnative-perf="ultra"] .settings__content,
-        [data-agnative-perf="ultra"] .agnative-control-panel {
-            background: #000000 !important;
+        body[data-agnative-perf="ultra"] .agnative-leftdock,
+        body[data-agnative-perf="ultra"] .settings__content,
+        body[data-agnative-perf="ultra"] .agnative-control-panel,
+        .agnative-leftdock,
+        .settings__content,
+        .agnative-control-panel {
+            background: none !important;
+            background-color: #000000 !important;
         }
     `;
     const style = document.createElement('style');
