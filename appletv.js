@@ -6313,12 +6313,14 @@
 
 })();
 (function () {
-    const structural_patch = `
+    const css = `
         .nfx-card-overlay__meta,
+        .nfx-card-rating,
         .card__age,
         .card__text,
         .card__icons,
-        .card__rating { 
+        .card__rating,
+        .card__vote { 
             display: none !important; 
         }
 
@@ -6329,25 +6331,30 @@
             background-image: none !important;
             box-shadow: none !important;
         }
-
-        .full-start__description,
-        .full-start__details,
-        .full-start__rate,
-        .full-start__tags,
-        .full-start__reactions,
-        .full-start__persons,
-        .full-start__info,
-        .full-start-new__details,
-        .full-start-new__tags,
-        .full-start-new__desc,
-        .full-start-new__reactions,
-        .full-start-new__persons,
-        .full-start-new__rate { 
-            display: none !important; 
-        }
     `;
     const style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = structural_patch;
+    style.innerHTML = css;
     document.head.appendChild(style);
+
+    if (window.Lampa && window.Lampa.Listener) {
+        window.Lampa.Listener.follow('full', function (e) {
+            if (e.type === 'build' && e.html) {
+                const target_nodes = [
+                    '.full-start__age', '.full-start-new__age',
+                    '.full-start__slogan', '.full-start-new__slogan',
+                    '.full-start__description', '.full-start-new__desc',
+                    '.full-start__details', '.full-start-new__details',
+                    '.full-start__rate', '.full-start-new__rate',
+                    '.full-start__rating',
+                    '.full-start__tags', '.full-start-new__tags',
+                    '.full-start__reactions', '.full-start-new__reactions',
+                    '.full-start__persons', '.full-start-new__persons',
+                    '.full-start__info', '.info__rate', '.info__icon', '.info__text',
+                    '.tv-rating'
+                ];
+                e.html.find(target_nodes.join(', ')).remove();
+            }
+        });
+    }
 })();
