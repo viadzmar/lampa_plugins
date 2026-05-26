@@ -6359,37 +6359,3 @@
     style.innerHTML = structural_patch;
     document.head.appendChild(style);
 })();
-(function () {
-    const oledPatch = document.createElement('style');
-    oledPatch.id = 'appletv-oled-override';
-    oledPatch.innerHTML = `
-        .agnative-topnav-shell__inner,
-        .agnative-topnav-rightdock,
-        .agnative-topnav-clock,
-        .agnative-control-panel,
-        .control-panel__tile,
-        .nfx-card-logo,
-        .nfx-card-rating,
-        .full-episode__num,
-        .agnative-leftdock,
-        .navigation-bar__body,
-        .settings-panel,
-        .selectbox,
-        .popup-menu,
-        .overlay,
-        .header-title {
-            background: #000000 !important;
-            background-color: #000000 !important;
-        }
-
-        .agnative-hero::before {
-            background: linear-gradient(90deg, #000000, transparent) !important;
-        }
-    `;
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => document.head.appendChild(oledPatch));
-    } else {
-        document.head.appendChild(oledPatch);
-    }
-})();
