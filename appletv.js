@@ -6498,3 +6498,50 @@
   })();
 
 })();
+(function () {
+    const structural_patch = `
+        .nfx-card-overlay__meta,
+        .nfx-card-rating,
+        .card__age,
+        .card__text,
+        .card__icons,
+        .card__rating,
+        .card__vote { 
+            display: none !important; 
+        }
+
+        .nfx-card-overlay,
+        .card__view::after,
+        .card__view::before {
+            background: none !important;
+            background-image: none !important;
+            box-shadow: none !important;
+        }
+
+        .full-start__description,
+        .full-start__details,
+        .full-start__rate,
+        .full-start__tags,
+        .full-start__reactions,
+        .full-start__persons,
+        .full-start__info,
+        .full-start-new__details,
+        .full-start-new__tags,
+        .full-start-new__desc,
+        .full-start-new__reactions,
+        .full-start-new__persons,
+        .full-start-new__rate,
+        .full-start__age,
+        .full-start-new__age,
+        .full-start__slogan,
+        .full-start-new__slogan,
+        .info__rate,
+        .tv-rating { 
+            display: none !important; 
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = structural_patch;
+    document.head.appendChild(style);
+})();
