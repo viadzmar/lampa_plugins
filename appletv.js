@@ -7673,12 +7673,26 @@
 (function () {
     const style = document.createElement('style');
     style.innerHTML = `
+        /* Полное отключение и принудительное скрытие псевдоэлементов-градиентов */
         body.appletv-agnative-topnav .card .card__view::after,
         body.appletv-agnative-topnav .card-episode .full-episode__img::after,
-        body.appletv-agnative-topnav .full-start-new__poster::after {
+        body.appletv-agnative-topnav .full-start-new__poster::after,
+        .card .card__view::after,
+        .card-episode .full-episode__img::after,
+        .full-start-new__poster::after {
             display: none !important;
             content: none !important;
             background: none !important;
+            background-image: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        /* Альтернативный селектор оверлея подписи, генерирующего градиентную подложку */
+        body.appletv-agnative-topnav .nfx-card-overlay,
+        .nfx-card-overlay {
+            background: none !important;
+            background-image: none !important;
         }
     `;
     document.head.appendChild(style);
