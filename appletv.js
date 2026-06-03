@@ -7622,3 +7622,24 @@
     style.innerHTML = structural_patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const structural_patch = `
+        .card__textbox,
+        .card__age,
+        .card__title,
+        .nfx-card-overlay__meta { 
+            display: none !important; 
+        }
+        .card__view::after,
+        .card__view::before,
+        .nfx-card-overlay {
+            background: none !important;
+            background-image: none !important;
+            box-shadow: none !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = structural_patch;
+    document.head.appendChild(style);
+})();
