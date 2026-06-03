@@ -7670,21 +7670,3 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
-(function () {
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .card__view .card__view-text { 
-            display: none !important; 
-        }
-        .card__view { 
-            padding: 0 !important; 
-            width: 24px !important; 
-            height: 24px !important; 
-            display: flex !important; 
-            align-items: center !important; 
-            justify-content: center !important; 
-        }
-    `;
-    document.head.appendChild(style);
-})();
-
