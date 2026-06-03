@@ -7647,3 +7647,26 @@
     style.innerHTML = structural_patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const patch = `
+        .card-layer,
+        .card-bottom,
+        .card-overlay,
+        .card__gradient,
+        .card__shadow,
+        .appletv-agnative-topnav-glare {
+            background: transparent !important;
+            background-image: none !important;
+            box-shadow: none !important;
+        }
+
+        .card,
+        .card__view {
+            box-shadow: none !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
