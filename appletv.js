@@ -7670,3 +7670,18 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .card .card__view .card__view-status {
+            display: none !important;
+        }
+        .card .card__view {
+            padding: 0 !important;
+            min-width: auto !important;
+            background: transparent !important;
+        }
+    `;
+    document.head.appendChild(style);
+})();
+                
