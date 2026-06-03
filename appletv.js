@@ -7670,3 +7670,23 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const color_patch = `
+        .focus,
+        .card.focus .card__view,
+        .button.focus,
+        .selector.focus,
+        .menu__item.focus,
+        .category.focus,
+        [class*="focus"] {
+            border-color: rgba(255, 255, 255, 1) !important;
+            outline-color: rgba(255, 255, 255, 1) !important;
+            box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 1) !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = color_patch;
+    document.head.appendChild(style);
+})();
+                   
