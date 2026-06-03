@@ -7670,3 +7670,16 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const style = document.createElement('style');
+    style.innerHTML = `
+        body.appletv-agnative-topnav .card .card__view::after,
+        body.appletv-agnative-topnav .card-episode .full-episode__img::after,
+        body.appletv-agnative-topnav .full-start-new__poster::after {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+        }
+    `;
+    document.head.appendChild(style);
+})();
