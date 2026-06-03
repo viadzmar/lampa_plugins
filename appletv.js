@@ -7630,10 +7630,14 @@
         .nfx-card-overlay__meta { 
             display: none !important; 
         }
+
+        .card::after,
+        .card::before,
         .card__view::after,
         .card__view::before,
-        .nfx-card-overlay {
-            background: none !important;
+        .nfx-card-overlay,
+        .card__layer {
+            background: transparent !important;
             background-image: none !important;
             box-shadow: none !important;
         }
