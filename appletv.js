@@ -7699,20 +7699,6 @@
 })();
 (function () {
     const patch = `
-        .card__marker--look,
-        .card__marker--continued,
-        .card__marker--viewed,
-        .card__marker--scheduled {
-            display: none !important;
-        }
-    `;
-    const style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = patch;
-    document.head.appendChild(style);
-})();
-(function () {
-    const patch = `
         .card__view {
             background: none !important;
             background-image: none !important;
@@ -7726,6 +7712,35 @@
             background-image: none !important;
             opacity: 0 !important;
             visibility: hidden !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
+(function () {
+    const patch = `
+        .card__marker--look,
+        .card__marker--continued,
+        .card__marker--viewed,
+        .card__marker--scheduled {
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden !important;
+        }
+
+        .card__marker--look span,
+        .card__marker--continued span,
+        .card__marker--viewed span,
+        .card__marker--scheduled span {
+            display: none !important;
+            content: none !important;
+            font-size: 0 !important;
+            line-height: 0 !important;
         }
     `;
     const style = document.createElement('style');
