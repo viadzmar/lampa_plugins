@@ -7792,6 +7792,15 @@
 })();
 (function () {
     const patch = `
+        .card__marker--look,
+        .card__marker--continued,
+        .card__marker--viewed,
+        .card__marker--scheduled,
+        .card__marker--thrown {
+            margin-right: -0.6em !important;
+            padding-right: 0 !important;
+        }
+
         .card__marker--look span,
         .card__marker--continued span,
         .card__marker--viewed span,
