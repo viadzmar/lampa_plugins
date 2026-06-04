@@ -7725,7 +7725,7 @@
         .card__marker--continued span,
         .card__marker--viewed span,
         .card__marker--scheduled span,
-        .card__marker--thrown {
+        .card__marker--thrown span {
             display: none !important;
             visibility: hidden !important;
             font-size: 0 !important;
