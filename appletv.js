@@ -7699,13 +7699,11 @@
 })();
 (function () {
     const patch = `
-        .card__marker--look span,
-        .card__marker--continued span,
-        .card__marker--viewed span,
-        .card__marker--scheduled span {
+        .card__marker--look,
+        .card__marker--continued,
+        .card__marker--viewed,
+        .card__marker--scheduled {
             display: none !important;
-            visibility: hidden !important;
-            font-size: 0 !important;
         }
     `;
     const style = document.createElement('style');
