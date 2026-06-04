@@ -7797,7 +7797,7 @@
         .card__marker--viewed,
         .card__marker--scheduled,
         .card__marker--thrown {
-            margin-right: -0.6em !important;
+            margin-right: -0.8em !important;
             padding-right: 0 !important;
         }
 
