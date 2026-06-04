@@ -7790,3 +7790,20 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const patch = `
+        .new-interface-info__details {
+            display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
