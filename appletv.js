@@ -7792,36 +7792,14 @@
 })();
 (function () {
     const patch = `
-        .card__marker--look,
-        .card__marker--continued,
-        .card__marker--viewed,
-        .card__marker--scheduled,
-        .card__marker--thrown {
-            padding: 0 !important;
-            margin: 0 !important;
-            border: none !important;
-            width: 0 !important;
-            height: 0 !important;
-            min-width: 0 !important;
-            min-height: 0 !important;
-            max-width: 0 !important;
-            max-height: 0 !important;
-            overflow: hidden !important;
-            line-height: 0 !important;
-            font-size: 0 !important;
-        }
-
         .card__marker--look span,
         .card__marker--continued span,
         .card__marker--viewed span,
         .card__marker--scheduled span,
         .card__marker--thrown span {
             display: none !important;
-            content: none !important;
+            visibility: hidden !important;
             font-size: 0 !important;
-            line-height: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
         }
     `;
     const style = document.createElement('style');
