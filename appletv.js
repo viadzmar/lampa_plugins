@@ -7711,3 +7711,25 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const patch = `
+        .card__view {
+            background: none !important;
+            background-image: none !important;
+            box-shadow: none !important;
+        }
+
+        .card__view::before {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+            background-image: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
