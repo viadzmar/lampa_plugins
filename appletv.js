@@ -5026,7 +5026,7 @@
         'body.' + BODY_CLASS + '[' + PERF_ATTR + '="ultra"] .agnative-leftdock__item.hover,',
         'body.' + BODY_CLASS + '[' + PERF_ATTR + '="ultra"] .agnative-leftdock__item.focus {',
         '  transform: none !important;',
-        '  box-shadow: 0 0 0 2px rgba(86,141,255,.92) !important;',
+        '  box-shadow: 0 0 0 2px rgba(255,255,255,.92) !important;',
         '}',
 
         'body.' + BODY_CLASS + ' .settings {',
