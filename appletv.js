@@ -7818,10 +7818,7 @@
 (function () {
     const patch = `
         .agnative-topnav-rightdock {
-            position: relative !important;
-            right: 5vw !important;
-            margin-right: 5vw !important;
-            transform: translateX(-5vw) !important;
+            transform: translateX(-1%) !important;
         }
     `;
     const style = document.createElement('style');
