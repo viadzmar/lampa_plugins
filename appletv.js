@@ -7815,3 +7815,15 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const patch = `
+        body.appletv-agnative-topnav .agnative-topnav-rightdock {
+            margin-right: 5vw !important;
+            transform: translateX(-5vw) !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
