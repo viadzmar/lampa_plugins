@@ -7839,8 +7839,14 @@
 })();
 (function () {
     const patch = `
-        .full-start-new__buttons {
-            transform: translateY(0.5em) !important;
+        .cardify__left .full-start-new__buttons {
+            margin-top: 2em !important;
+            padding-top: 1em !important;
+            transform: translateY(1em) !important;
+        }
+        .cardify__left .cardify__details {
+            margin-bottom: 2em !important;
+            padding-bottom: 1em !important;
         }
     `;
     const style = document.createElement('style');
