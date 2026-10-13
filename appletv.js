@@ -7828,7 +7828,7 @@
 })();
 (function () {
     const patch = `
-        body.appletv-agnative-topnav .head .head__menu-icon {
+        body.appletv-agnative-topnav .head__menu-icon.head__menu-icon.head__menu-icon {
             left: 0.5em !important;
         }
     `;
