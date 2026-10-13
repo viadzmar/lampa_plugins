@@ -7837,20 +7837,4 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
-(function () {
-    const patch = `
-        .cardify__left .full-start-new__buttons {
-            margin-top: 6em !important;
-            padding-top: 3em !important;
-            transform: translateY(1em) !important;
-        }
-        .cardify__left .cardify__details {
-            margin-bottom: 6em !important;
-            padding-bottom: 3em !important;
-        }
-    `;
-    const style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = patch;
-    document.head.appendChild(style);
-})();
+
