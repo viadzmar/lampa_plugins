@@ -7817,9 +7817,11 @@
 })();
 (function () {
     const patch = `
-        body.appletv-agnative-topnav .agnative-topnav-rightdock {
-            margin-right: 50vw !important;
-            transform: translateX(-50vw) !important;
+        .agnative-topnav-rightdock {
+            position: relative !important;
+            right: 5vw !important;
+            margin-right: 5vw !important;
+            transform: translateX(-5vw) !important;
         }
     `;
     const style = document.createElement('style');
