@@ -7826,3 +7826,14 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const patch = `
+        body.appletv-agnative-topnav .head .head__menu-icon {
+            left: 0.5em !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
