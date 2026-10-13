@@ -7818,7 +7818,7 @@
 (function () {
     const patch = `
         .agnative-topnav-rightdock {
-            transform: translateX(clamp(1px, 1vw, 10px)) !important;
+            right: 0.5em !important;
         }
     `;
     const style = document.createElement('style');
