@@ -7840,9 +7840,9 @@
 (function () {
     const patch = `
         .cardify__left .full-start-new__buttons {
-            margin-top: 2em !important;
+            margin-top: 5em !important;
             padding-top: 1em !important;
-            transform: translateY(4em) !important;
+            transform: translateY(5em) !important;
         }
         .cardify__left .cardify__details {
             margin-bottom: 2em !important;
