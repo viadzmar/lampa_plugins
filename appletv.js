@@ -7818,7 +7818,7 @@
 (function () {
     const patch = `
         .agnative-topnav-rightdock {
-            transform: translateX(-1%) !important;
+            transform: translateX(1%) !important;
         }
     `;
     const style = document.createElement('style');
