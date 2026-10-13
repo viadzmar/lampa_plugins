@@ -7837,3 +7837,14 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+(function () {
+    const patch = `
+        body.appletv-agnative-topnav .full-start-new__buttons.full-start-new__buttons.full-start-new__buttons {
+            margin-top: 0.5em !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
