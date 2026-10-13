@@ -7840,7 +7840,7 @@
 (function () {
     const patch = `
         body.appletv-agnative-topnav .full-start-new__buttons.full-start-new__buttons.full-start-new__buttons {
-            margin-top: 0.5em !important;
+            margin-top: 1em !important;
         }
     `;
     const style = document.createElement('style');
