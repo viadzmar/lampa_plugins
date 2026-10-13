@@ -7839,7 +7839,7 @@
 })();
 (function () {
     const patch = `
-        body.appletv-agnative-topnav .full-start-new__buttons.full-start-new__buttons.full-start-new__buttons {
+        .full-start-new__buttons {
             transform: translateY(0.5em) !important;
         }
     `;
