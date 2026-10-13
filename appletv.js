@@ -7840,13 +7840,13 @@
 (function () {
     const patch = `
         .cardify__left .full-start-new__buttons {
-            margin-top: 2em !important;
-            padding-top: 1em !important;
+            margin-top: 4em !important;
+            padding-top: 2em !important;
             transform: translateY(1em) !important;
         }
         .cardify__left .cardify__details {
-            margin-bottom: 2em !important;
-            padding-bottom: 1em !important;
+            margin-bottom: 4em !important;
+            padding-bottom: 2em !important;
         }
     `;
     const style = document.createElement('style');
