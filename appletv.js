@@ -7837,4 +7837,14 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
-
+(function () {
+    const patch = `
+        .cardify__left > .full-start-new__buttons.full-start-new__buttons.full-start-new__buttons {
+            padding-top: 0.5em !important;
+        }
+    `;
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
