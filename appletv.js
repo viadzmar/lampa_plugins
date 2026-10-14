@@ -7841,7 +7841,7 @@
     const patch = `
         .cardify__left .full-start-new__buttons {
             transform: none !important;      /* убираем старый сдвиг */
-            margin-top: 2em !important;      /* опускаем честно, в потоке */
+            margin-top: 0.5em !important;      /* опускаем честно, в потоке */
             margin-bottom: 0 !important;     /* убираем лишний отступ снизу */
         }
         .cardify__left .cardify__details {
