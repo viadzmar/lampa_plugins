@@ -7839,10 +7839,11 @@
 })();
 (function () {
     const patch = `
-    .cardify__left .full-start-new__buttons {
-        margin-top: 2em !important;
-    }
-`;
+        .cardify__left .full-start-new__buttons {
+    margin-top: 1em !important;
+    margin-bottom: 0 !important;
+}
+    `;
     const style = document.createElement('style');
     style.type = 'text/css';
     style.textContent = patch;
