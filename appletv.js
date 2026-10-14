@@ -7840,8 +7840,10 @@
 (function () {
     const patch = `
     .cardify__left .full-start-new__buttons {
-        margin-top: 2em !important;
-    }
+    transform: translateY(2em) !important;
+    margin-bottom: -2em !important; /* съедаем освободившееся место */
+}
+
 `;
     const style = document.createElement('style');
     style.type = 'text/css';
