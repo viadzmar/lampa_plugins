@@ -7840,7 +7840,7 @@
 (function () {
     const patch = `
     .cardify__left .full-start-new__buttons {
-        margin-top: 0.5em !important;
+        margin-top: 0em !important;
     }
 `;
     const style = document.createElement('style');
