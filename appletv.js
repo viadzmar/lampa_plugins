@@ -7839,16 +7839,10 @@
 })();
 (function () {
     const patch = `
-        .cardify__left .full-start-new__buttons {
-            transform: none !important;
-            margin-top: 1em !important;
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
-        }
-        .cardify__left .full-start-new__buttons .full-start__button {
-            margin-bottom: 0 !important;
-        }
-    `;
+    .cardify__left .full-start-new__buttons {
+        margin-top: 2em !important;
+    }
+`;
     const style = document.createElement('style');
     style.type = 'text/css';
     style.textContent = patch;
