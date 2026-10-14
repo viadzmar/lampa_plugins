@@ -7837,24 +7837,4 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
-(function () {
-    const patch = `
-        /* убираем тёмную полоску снизу */
-        .cardify__left {
-            padding-bottom: 0 !important;
-            margin-bottom: 0 !important;
-        }
 
-        /* кнопки ведут себя спокойно, ничего им не мешает */
-        .cardify__left .full-start-new__buttons {
-            margin-top: 1em !important;   /* ← тут регулируй высоту сверху */
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
-            transform: none !important;   /* если в плагине остался старый translateY */
-        }
-    `;
-    const style = document.createElement('style');
-    style.type = 'text/css';
-    style.textContent = patch;
-    document.head.appendChild(style);
-})();
