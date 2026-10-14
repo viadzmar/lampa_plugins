@@ -7840,12 +7840,12 @@
 (function () {
     const patch = `
         .cardify__left .full-start-new__buttons {
-            background: red !important;
-            outline: 3px solid lime !important;
-            margin-top: 5em !important;
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
-        }
+    background: red !important;
+    outline: 3px solid lime !important;
+    margin-top: 5em !important;
+    margin-bottom: 5em !important;
+    transform: translateY(5em) !important;   /* ← новый тест */
+}
     `;
     const style = document.createElement('style');
     style.type = 'text/css';
