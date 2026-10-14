@@ -7841,10 +7841,10 @@
     const patch = `
         .cardify__left .full-start-new__buttons {
             background: red !important;
+            outline: 3px solid lime !important;
         }
     `;
     const style = document.createElement('style');
     style.textContent = patch;
     document.head.appendChild(style);
-    console.log('[patch] injected, style in DOM:', document.head.contains(style));
 })();
