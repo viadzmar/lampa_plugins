@@ -7850,7 +7850,7 @@
             // честный сдвиг вниз, компенсируем отрицательным margin,
             // чтобы снизу не осталось «дыры»
             el.style.setProperty('transform', 'translateY(0.6em)', 'important');
-            el.style.setProperty('margin-bottom', '-0.9em', 'important');
+            el.style.setProperty('margin-bottom', '-1em', 'important');
         });
     }
 
