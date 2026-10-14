@@ -7837,4 +7837,26 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+(function () {
+    function fix() {
+        // 1. Убираем нижний отступ у родителя — тёмная полоска уйдёт
+        document.querySelectorAll('.cardify__left').forEach(function (el) {
+            el.style.setProperty('padding-bottom', '0', 'important');
+            el.style.setProperty('margin-bottom', '0', 'important');
+        });
 
+        // 2. Двигаем кнопки вниз
+        document.querySelectorAll('.cardify__left .full-start-new__buttons').forEach(function (el) {
+            // честный сдвиг вниз, компенсируем отрицательным margin,
+            // чтобы снизу не осталось «дыры»
+            el.style.setProperty('transform', 'translateY(0.6em)', 'important');
+            el.style.setProperty('margin-bottom', '-0.6em', 'important');
+        });
+    }
+
+    fix();
+    // Lampa перерисовывает карточку — повторяем
+    new MutationObserver(fix).observe(document.documentElement, {
+        childList: true, subtree: true
+    });
+})();
