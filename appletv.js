@@ -7839,13 +7839,21 @@
 })();
 (function () {
     const patch = `
+        /* прижимаем блок кнопок к самому низу */
+        .cardify__left {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: flex-end !important;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
         .cardify__left .full-start-new__buttons {
-    background: red !important;
-    outline: 3px solid lime !important;
-    margin-top: 5em !important;
-    margin-bottom: 5em !important;
-    transform: translateY(5em) !important;   /* ← новый тест */
-}
+            margin-top: auto !important;      /* забирает всё свободное место сверху */
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+            transform: none !important;
+        }
     `;
     const style = document.createElement('style');
     style.type = 'text/css';
