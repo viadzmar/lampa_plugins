@@ -7839,12 +7839,17 @@
 })();
 (function () {
     const patch = `
-    .cardify__left .full-start-new__buttons {
-        margin-top: 2em !important;
-      }
+        .cardify__left .full-start-new__buttons {
+            transform: none !important;      /* убираем старый сдвиг */
+            margin-top: 2em !important;      /* опускаем честно, в потоке */
+            margin-bottom: 0 !important;     /* убираем лишний отступ снизу */
+        }
+        .cardify__left .cardify__details {
+            margin-bottom: 0 !important;     /* на всякий — если отступ снизу у деталей */
+        }
     `;
     const style = document.createElement('style');
     style.type = 'text/css';
-    style.textContent = patch;               /* innerHTML → textContent (безопаснее) */
+    style.textContent = patch;
     document.head.appendChild(style);
 })();
