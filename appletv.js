@@ -7945,8 +7945,8 @@
 
 (function () {
     const patch = `
-        .full-start-new__title.twolines:not(#lampa-logo-shift),
-        .cardify__left > .full-start-new__title.twolines:not(#lampa-logo-shift) {
+        .cardify__left:not(#lampa-left-shift),
+        .full-start-new__right > .cardify__left:not(#lampa-left-shift) {
             margin-top: 1em !important;
         }
     `;
