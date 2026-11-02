@@ -8110,8 +8110,8 @@
     const patch = `
         .full-start-new__buttons:not(#lampa-btn-shift),
         .cardify__left > .full-start-new__buttons:not(#lampa-btn-shift) {
-            margin-top: 1.5em !important;
-            transform: translateY(1.5em) !important;
+            margin-top: 1em !important;
+            transform: translateY(1em) !important;
         }
     `;
 
