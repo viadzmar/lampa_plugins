@@ -8067,7 +8067,7 @@
 })();
 
 (function () {
-    const removeTitles = new Set(['Закладки', 'Нравится', 'Брошено']);
+    const removeTitles = new Set(['Закладки', 'Просмотрено', 'Нравится', 'Брошено']);
 
     const removeLines = () => {
         document.querySelectorAll('.items-line__title').forEach((title) => {
