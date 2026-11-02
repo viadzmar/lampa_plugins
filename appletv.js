@@ -8025,30 +8025,27 @@
 (function () {
     const hideTitles = new Set(['Подробно', 'Комментарии']);
 
-    const hideLines = () => {
+    const hideOnlyTitles = () => {
         document.querySelectorAll('.items-line__title').forEach((title) => {
             const text = title.textContent.trim();
 
             if (!hideTitles.has(text)) return;
 
-            const line = title.closest('.items-line');
-            const target = line || title;
-
-            target.style.setProperty('display', 'none', 'important');
-            target.style.setProperty('visibility', 'hidden', 'important');
-            target.style.setProperty('width', '0', 'important');
-            target.style.setProperty('height', '0', 'important');
-            target.style.setProperty('margin', '0', 'important');
-            target.style.setProperty('padding', '0', 'important');
-            target.style.setProperty('overflow', 'hidden', 'important');
-            target.style.setProperty('flex-basis', '0', 'important');
-            target.style.setProperty('flex-grow', '0', 'important');
-            target.style.setProperty('min-width', '0', 'important');
-            target.style.setProperty('max-width', '0', 'important');
+            title.style.setProperty('display', 'none', 'important');
+            title.style.setProperty('visibility', 'hidden', 'important');
+            title.style.setProperty('width', '0', 'important');
+            title.style.setProperty('height', '0', 'important');
+            title.style.setProperty('margin', '0', 'important');
+            title.style.setProperty('padding', '0', 'important');
+            title.style.setProperty('overflow', 'hidden', 'important');
+            title.style.setProperty('flex-basis', '0', 'important');
+            title.style.setProperty('flex-grow', '0', 'important');
+            title.style.setProperty('min-width', '0', 'important');
+            title.style.setProperty('max-width', '0', 'important');
         });
     };
 
-    hideLines();
+    hideOnlyTitles();
 
     let raf = null;
 
@@ -8057,7 +8054,45 @@
 
         raf = requestAnimationFrame(() => {
             raf = null;
-            hideLines();
+            hideOnlyTitles();
+        });
+    });
+
+    const root = document.body || document.documentElement;
+
+    observer.observe(root, {
+        childList: true,
+        subtree: true
+    });
+})();
+
+(function () {
+    const removeTitles = new Set(['Закладки', 'Нравится', 'Брошено']);
+
+    const removeLines = () => {
+        document.querySelectorAll('.items-line__title').forEach((title) => {
+            const text = title.textContent.trim();
+
+            if (!removeTitles.has(text)) return;
+
+            const line = title.closest('.items-line');
+
+            if (line && line.isConnected) {
+                line.remove();
+            }
+        });
+    };
+
+    removeLines();
+
+    let raf = null;
+
+    const observer = new MutationObserver(() => {
+        if (raf) return;
+
+        raf = requestAnimationFrame(() => {
+            raf = null;
+            removeLines();
         });
     });
 
