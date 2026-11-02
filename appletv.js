@@ -8110,7 +8110,7 @@
     const patch = `
         .full-start-new__buttons:not(#lampa-btn-scale),
         .full-start-new__buttons .full-start__button:not(#lampa-btn-scale) {
-            font-size: 33px !important;
+            font-size: 0.66em !important;
         }
     `;
 
