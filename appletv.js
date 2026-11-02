@@ -7947,7 +7947,31 @@
     const patch = `
         .cardify__left:not(#lampa-left-shift),
         .full-start-new__right > .cardify__left:not(#lampa-left-shift) {
-            margin-top: 1em !important;
+            margin-top: 3em !important;
+        }
+    `;
+
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
+
+(function () {
+    const patch = `
+        .full-descr__details:not(#lampa-hide-descr),
+        .full-descr__tags:not(#lampa-hide-descr) {
+            display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            flex-basis: 0 !important;
+            flex-grow: 0 !important;
+            min-width: 0 !important;
+            max-width: 0 !important;
         }
     `;
 
