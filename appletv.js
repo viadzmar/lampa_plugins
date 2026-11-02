@@ -7899,3 +7899,19 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+
+(function () {
+    const structural_patch = `
+        .items-line__head:not(#lampa-items-line-fix),
+        .items-line__head.items-line__head:not(#lampa-items-line-fix),
+        html body .items-line__head:not(#lampa-items-line-fix) {
+            padding-bottom: 0 !important;
+            padding-block-end: 0 !important;
+        }
+    `;
+
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = structural_patch;
+    document.head.appendChild(style);
+})();
