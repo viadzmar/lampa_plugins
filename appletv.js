@@ -7906,6 +7906,7 @@
         .items-line__head.items-line__head:not(#lampa-items-line-fix),
         html body .items-line__head:not(#lampa-items-line-fix) {
             padding-bottom: 0 !important;
+            padding-top: 0.1em !impotant;
             padding-block-end: 0 !important;
         }
     `;
