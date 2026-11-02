@@ -8006,23 +8006,6 @@
 })();
 
 (function () {
-    const patch = `
-        .cardify__left:not(#lampa-left-shift),
-        .full-start-new__right > .cardify__left:not(#lampa-left-shift) {
-            align-self: flex-start !important;
-            margin-top: 3em !important;
-            position: static !important;
-            transform: none !important;
-        }
-    `;
-
-    const style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = patch;
-    document.head.appendChild(style);
-})();
-
-(function () {
     const hideTitles = new Set(['Подробно', 'Комментарии']);
 
     const hideOnlyTitles = () => {
@@ -8105,29 +8088,15 @@
 })();
 
 (function () {
-    const applyMargin = () => {
-        document.querySelectorAll('.card__marker--look').forEach((el) => {
-            el.style.setProperty('margin-right', '0.2em', 'important');
-        });
-    };
+    const patch = `
+        .card__marker.card__marker--look::before:not(#lampa-marker-look-before),
+        .card__marker--look::before:not(#lampa-marker-look-before) {
+            margin-right: 0.2em !important;
+        }
+    `;
 
-    applyMargin();
-
-    let raf = null;
-
-    const observer = new MutationObserver(() => {
-        if (raf) return;
-
-        raf = requestAnimationFrame(() => {
-            raf = null;
-            applyMargin();
-        });
-    });
-
-    const root = document.body || document.documentElement;
-
-    observer.observe(root, {
-        childList: true,
-        subtree: true
-    });
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
 })();
