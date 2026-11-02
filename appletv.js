@@ -8089,7 +8089,11 @@
 
 (function () {
     const patch = `
-        .card__marker--look::before {
+        .card__marker--look::before,
+        .card__marker--continued::before,
+        .card__marker--viewed::before,
+        .card__marker--scheduled::before,
+        .card__marker--thrown::before {
             margin-right: 0.2em !important;
             right: 0.2em !important;
             padding-right: 0 !important;
