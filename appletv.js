@@ -7840,10 +7840,8 @@
 
 (function () {
     const structural_patch = `
-        .items-line__head,
-        .items-line__head.items-line__head {
+        .items-line__head {
             padding-bottom: 0 !important;
-            padding-block-end: 0 !important;
         }
     `;
 
