@@ -7980,3 +7980,41 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+
+(function () {
+    const removeTitles = new Set(['Метаданные', 'Настроения']);
+
+    const removeLines = () => {
+        document.querySelectorAll('.items-line__title').forEach((title) => {
+            const text = title.textContent.trim();
+
+            if (!removeTitles.has(text)) return;
+
+            const line = title.closest('.items-line');
+
+            if (line && line.isConnected) {
+                line.remove();
+            }
+        });
+    };
+
+    removeLines();
+
+    let raf = null;
+
+    const observer = new MutationObserver(() => {
+        if (raf) return;
+
+        raf = requestAnimationFrame(() => {
+            raf = null;
+            removeLines();
+        });
+    });
+
+    const root = document.body || document.documentElement;
+
+    observer.observe(root, {
+        childList: true,
+        subtree: true
+    });
+})();
