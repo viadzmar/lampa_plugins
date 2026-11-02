@@ -8108,9 +8108,10 @@
 
 (function () {
     const patch = `
-        .full-start-new__buttons:not(#lampa-btn-scale),
-        .full-start-new__buttons .full-start__button:not(#lampa-btn-scale) {
-            font-size: 1.5em !important;
+        .full-start-new__buttons:not(#lampa-btn-shift),
+        .cardify__left > .full-start-new__buttons:not(#lampa-btn-shift) {
+            margin-top: 1.5em !important;
+            transform: translateY(1.5em) !important;
         }
     `;
 
