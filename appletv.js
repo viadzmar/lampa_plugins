@@ -8089,9 +8089,10 @@
 
 (function () {
     const patch = `
-        .card__marker.card__marker--look::before:not(#lampa-marker-look-before),
-        .card__marker--look::before:not(#lampa-marker-look-before) {
+        .card__marker--look::before {
             margin-right: 0.2em !important;
+            right: 0.2em !important;
+            padding-right: 0 !important;
         }
     `;
 
