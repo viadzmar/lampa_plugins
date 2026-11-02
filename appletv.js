@@ -8105,3 +8105,17 @@
     style.innerHTML = patch;
     document.head.appendChild(style);
 })();
+
+(function () {
+    const patch = `
+        .full-start-new__buttons:not(#lampa-btn-scale),
+        .full-start-new__buttons .full-start__button:not(#lampa-btn-scale) {
+            font-size: 2em !important;
+        }
+    `;
+
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
