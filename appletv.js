@@ -8103,3 +8103,17 @@
         subtree: true
     });
 })();
+
+(function () {
+    const patch = `
+        .card__marker.card__marker--look:not(#lampa-marker-look-mr),
+        .card__marker--look:not(#lampa-marker-look-mr) {
+            margin-right: 0.2em !important;
+        }
+    `;
+
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
