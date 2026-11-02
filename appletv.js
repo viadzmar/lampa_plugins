@@ -7942,3 +7942,17 @@
     style.innerHTML = structural_patch;
     document.head.appendChild(style);
 })();
+
+(function () {
+    const patch = `
+        .full-start-new__title.twolines:not(#lampa-logo-shift),
+        .cardify__left > .full-start-new__title.twolines:not(#lampa-logo-shift) {
+            margin-top: 1em !important;
+        }
+    `;
+
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
