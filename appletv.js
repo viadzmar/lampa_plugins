@@ -7839,15 +7839,63 @@
 })();
 
 (function () {
-    const structural_patch = `
-        .items-line__head {
-            padding-bottom: 0 !important;
+    const patch = `
+        .card__history-date,
+        .card__history-date::before,
+        .card__history-date::after {
+            display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            background: transparent !important;
+            background-image: none !important;
+            border: 0 !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            content: none !important;
+        }
+
+        div:has(> .card__history-date),
+        div:has(> .card__history-date)::before,
+        div:has(> .card__history-date)::after {
+            background: transparent !important;
+            background-image: none !important;
+            border: 0 !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            content: none !important;
+            display: none !important;
+        }
+
+        div:has(> .card__history-date) {
+            margin: 0 !important;
+            padding: 0 !important;
+            min-height: 0 !important;
+            height: auto !important;
+        }
+
+        div:has(> .card__history-date:only-child) {
+            display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            flex-basis: 0 !important;
+            flex-grow: 0 !important;
+            min-width: 0 !important;
+            max-width: 0 !important;
         }
     `;
 
     const style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = structural_patch;
+    style.innerHTML = patch;
     document.head.appendChild(style);
 })();
-
