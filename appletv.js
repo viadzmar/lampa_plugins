@@ -7945,20 +7945,6 @@
 
 (function () {
     const patch = `
-        .cardify__left:not(#lampa-left-shift),
-        .full-start-new__right > .cardify__left:not(#lampa-left-shift) {
-            margin-top: 3em !important;
-        }
-    `;
-
-    const style = document.createElement('style');
-    style.type = 'text/css';
-    style.innerHTML = patch;
-    document.head.appendChild(style);
-})();
-
-(function () {
-    const patch = `
         .full-descr__details:not(#lampa-hide-descr),
         .full-descr__tags:not(#lampa-hide-descr) {
             display: none !important;
@@ -8008,6 +7994,70 @@
         raf = requestAnimationFrame(() => {
             raf = null;
             removeLines();
+        });
+    });
+
+    const root = document.body || document.documentElement;
+
+    observer.observe(root, {
+        childList: true,
+        subtree: true
+    });
+})();
+
+(function () {
+    const patch = `
+        .cardify__left:not(#lampa-left-shift),
+        .full-start-new__right > .cardify__left:not(#lampa-left-shift) {
+            align-self: flex-start !important;
+            margin-top: 3em !important;
+            position: static !important;
+            transform: none !important;
+        }
+    `;
+
+    const style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = patch;
+    document.head.appendChild(style);
+})();
+
+(function () {
+    const hideTitles = new Set(['Подробно', 'Комментарии']);
+
+    const hideLines = () => {
+        document.querySelectorAll('.items-line__title').forEach((title) => {
+            const text = title.textContent.trim();
+
+            if (!hideTitles.has(text)) return;
+
+            const line = title.closest('.items-line');
+            const target = line || title;
+
+            target.style.setProperty('display', 'none', 'important');
+            target.style.setProperty('visibility', 'hidden', 'important');
+            target.style.setProperty('width', '0', 'important');
+            target.style.setProperty('height', '0', 'important');
+            target.style.setProperty('margin', '0', 'important');
+            target.style.setProperty('padding', '0', 'important');
+            target.style.setProperty('overflow', 'hidden', 'important');
+            target.style.setProperty('flex-basis', '0', 'important');
+            target.style.setProperty('flex-grow', '0', 'important');
+            target.style.setProperty('min-width', '0', 'important');
+            target.style.setProperty('max-width', '0', 'important');
+        });
+    };
+
+    hideLines();
+
+    let raf = null;
+
+    const observer = new MutationObserver(() => {
+        if (raf) return;
+
+        raf = requestAnimationFrame(() => {
+            raf = null;
+            hideLines();
         });
     });
 
